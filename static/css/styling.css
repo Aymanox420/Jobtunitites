@@ -1,0 +1,164 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    background: #333;
+    color: white;
+    line-height: 1.6;
+    height: 100vh;
+    /*removing scroll bars and mechanisms*/
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    /*css smooth scroll porperties will be here*/
+    overflow-y: scroll;
+    scroll-behavior: smooth ;
+    /*this (with another part of code in the section) forces the user to
+     stay on one page when manualy scrolling, so the user cant look at 2 sections at once*/
+    scroll-snap-type: y mandatory;
+
+}
+
+/*navigation bar in general*/
+.navbar{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    /*ref,green,blue,alpha(giving it a littlebit of transparency*/
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/*elements inside the navigation bar */
+.navbar ul{
+    display: flex;
+    /*list style removes the bullets that were put by default*/
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+}
+
+/*now for the list items*/
+.navbar ul li{
+    /*this margin seperates each element inside the list (top and bottom)*/
+    margin: 0 2em;
+    padding: 1;
+    
+}
+
+/*targeting the local links of the elements (links that make us go to a page within out website)*/
+.navbar ul li a{
+    /*removing the underling uner the links*/ 
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+/*hoverig state over the navigation bar list elements*/
+.navbar ul li a:hover{
+    color: turquoise;
+}
+
+section{
+    display: flex;
+    /*we want h1 and the text to be on top of eachother*/
+    flex-direction: column;
+    align-items: center;
+    /*align both horizontaly & vertically to the center*/
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    /*no matter what the screen is, ther is always 100vh (viewports heights)*/
+    height: 100vh;
+
+    scroll-snap-align: center;
+}
+
+
+section h1{
+    font-size: 4rem;
+}
+
+section p{
+    font-size: 1.5rem;
+}
+
+/*background images*/
+
+section#Home{
+    background : url(/static/images/main-background\ 1.jpg) no-repeat center center/
+    cover;
+}
+
+section#Search{
+    background: url(/static/images/search-section-image.jpg) no-repeat center center/
+    cover;
+}
+
+section#About{
+    background: url(/static/images/about-section-image.jpg) no-repeat center center/
+    cover ;
+    filter: brightness(70%);
+
+}
+
+section#Contact{
+    background: url(/static/images/contact-section-image.jpg) no-repeat center center/
+    cover ;
+}
+
+/*table css*/
+
+.table-fixed {
+    margin-left: 25rem;
+    margin-top: 10rem;
+}
+
+.table-fixed thead,
+.table-fixed thead>th {
+    background: #4d7275;
+    color: #fff;
+}
+
+.table-fixed tbody tr td {
+    background: #fff;
+}
+
+.table-fixed>thead>tr>th {
+    border: 0 !important;
+}
+
+.table-fixed>tbody>tr>td:last-child {
+    border-right: 0;
+}
+
+.table-fixed tbody td,
+.table-fixed thead>tr>th {
+    float: left;
+    font-size: 14px;
+    padding-left: 20px !important;
+}
+
+.table-fixed .col {
+    width: 25%;
+}
+
+.table-fixed tbody {
+    display: block;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.table-fixed tr {
+    display: block;
+}
